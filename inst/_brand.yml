@@ -1,0 +1,63 @@
+logo:
+  images:
+    small: images/magic.png
+    medium: images/magic.png
+    large: images/magic.png
+meta:
+  name: Bioscience Data Portfolio
+  link: https://yourportfolio.com
+color:
+  palette:
+    coral-400: "#d64550"
+    coral-500: "#c22e3a"
+    coral-600: "#ad1f2d"
+    coral-700: "#981424"
+    teal-500: "#cda029"
+    teal-600: "#b88d23"
+    teal-700: "#a37a1e"
+    olive-500: "#84cc16"
+    olive-600: "#65a30d"
+    cream-50: "#f5f0e8"
+    warm-50: "#4a4e57"
+    warm-100: "#42454d"
+    warm-200: "#3a3d44"
+    warm-300: "#32353b"
+    warm-600: "#2a2d32"
+    warm-700: "#222529"
+    warm-800: "#1a1d20"
+    warm-900: "#121517"
+  primary: "#570a10"
+  secondary: "#ad720a"
+  success: "#325106"
+  danger: "#d64550"
+  warning: "#cda029"
+  info: "#5a8cb5"
+  light: &light-color "#bad9cf"
+  dark: &dark-color "#1a1c1a"
+  foreground: *dark-color
+  background: *light-color
+# Direct Bootstrap Sass variable mappings
+theme:
+  # Body
+  body-bg: *light-color
+  body-color: *dark-color
+  # Border radius
+  border-radius: "0.75rem"
+  border-radius-sm: "0.5rem"
+  border-radius-lg: "1rem"
+# text styling
+typography:
+  fonts:
+    - family: &base-font Manrope
+      source: google
+    - family: &header-font Montserrat
+      source: google
+  base:
+    family: *base-font
+    size: 1rem
+    line-height: 1.65
+    weight: 400
+  headings:
+    family: *header-font
+    weight: 700
+    line-height: 1.1

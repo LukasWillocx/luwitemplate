@@ -1,0 +1,123 @@
+/* Smooth transitions on interactive elements */
+.btn, .form-control, .form-select, .card {
+  transition: all 0.2s ease;
+}
+
+/* Subtle hover lift on cards */
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
+}
+
+/* Better focus indicators for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
+
+/* Slightly better button hover state */
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Scrollbar styling using brand colors */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bs-primary);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bs-primary-dark, color-mix(in srgb, var(--bs-primary) 85%, black));
+}
+
+/* Firefox scrollbar styling */
+* {
+  scrollbar-color: var(--bs-primary) color-mix(in srgb, var(--bs-light) 85%, white 15%);;
+}
+
+/* Card styling, slightly brighter as opposed to background color*/
+.card {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+/* Table styling - strip matching */
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: color-mix(in srgb, var(--bs-light) 40%, white 60%) ;
+}
+.table-striped > thead > tr > * {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+/* Changing the 'to' box in the select input for dateranges*/
+.input-daterange .input-group-text {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+/* Universal input styling */
+input:not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="checkbox"]):not([type="radio"]),
+textarea,
+select,
+.form-control,
+.form-select {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+/* Only style unchecked checkboxes and radios */
+.form-check-input:not(:checked) {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+}
+
+.selectize-input,
+.selectize-dropdown {
+  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%) !important;
+}
+
+.option:hover {
+  background-color: color-mix(in srgb, var(--bs-primary) 50%,white 50%) !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--bs-light);
+  opacity: 0.6;
+}
+
+/* Sidebar header styling */
+.sidebar-title {
+  background-color: var(--bs-light) !important;
+  text-align: center;
+}
+
+/* Remove well container constraints on vertical sidebar navigation */
+.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well {
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+/* Styled navigation pills for sidebar */
+.nav-pills .nav-link {
+  border-radius: 12px;
+  margin-bottom: 10px;
+  padding: 12px 20px;
+  border: 5px solid var(--bs-light);
+}
+
+/* Active pill styling - remove border */
+.nav-pills .nav-link.active {
+  border-radius: 12px;
+  border: none;
+}
