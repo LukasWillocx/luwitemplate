@@ -16,3 +16,5 @@ Imports:
     showtext,
     sysfonts,
     plotly
+URL: https://github.com/LukasWillocx/luwitemplate
+BugReports: https://github.com/LukasWillocx/luwitemplate/issues
