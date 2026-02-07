@@ -116,6 +116,7 @@ textarea::placeholder {
   border: 5px solid var(--bs-light);
 }
 
+
 /* Active pill styling - remove border */
 .nav-pills .nav-link.active {
   border-radius: 12px;
