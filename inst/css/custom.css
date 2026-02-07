@@ -114,8 +114,9 @@ textarea::placeholder {
   margin-bottom: 10px;
   padding: 12px 20px;
   border: 5px solid var(--bs-light);
+  box-sizing: border-box;  /* ADD THIS */
+  width: 100%;             /* ADD THIS to ensure pills don't exceed container */
 }
-
 
 /* Active pill styling - remove border */
 .nav-pills .nav-link.active {
