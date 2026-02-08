@@ -44,9 +44,42 @@
   scrollbar-color: var(--bs-primary) color-mix(in srgb, var(--bs-light) 85%, white 15%);;
 }
 
-/* Card styling, slightly brighter as opposed to background color*/
+/* Base card styling */
 .card {
-  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+  background: color-mix(in srgb, var(--bs-body-bg) 60%, transparent 40%);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid color-mix(in srgb, var(--bs-border-color) 50%, transparent 50%);
+  box-shadow:
+    0 1px 3px color-mix(in srgb, var(--bs-body-color) 5%, transparent 95%),
+    0 8px 24px color-mix(in srgb, var(--bs-body-color) 8%, transparent 92%),
+    inset 0 1px 0 color-mix(in srgb, white 20%, transparent 80%);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover state - subtle lift */
+.card:hover {
+  background: color-mix(in srgb, var(--bs-body-bg) 70%, transparent 30%);
+  border-color: color-mix(in srgb, var(--bs-border-color) 70%, transparent 30%);
+  transform: translateY(-2px);
+  box-shadow:
+    0 2px 6px color-mix(in srgb, var(--bs-body-color) 6%, transparent 94%),
+    0 12px 40px color-mix(in srgb, var(--bs-body-color) 12%, transparent 88%),
+    inset 0 1px 0 color-mix(in srgb, white 25%, transparent 75%);
+}
+
+/* Card header - define hierarchy */
+.card-header {
+  background: color-mix(in srgb, var(--bs-body-bg) 40%, transparent 60%);
+  border-bottom: 1px solid color-mix(in srgb, var(--bs-border-color) 30%, transparent 70%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+/* Card footer - subtle differentiation */
+.card-footer {
+  background: color-mix(in srgb, var(--bs-body-bg) 50%, transparent 50%);
+  border-top: 1px solid color-mix(in srgb, var(--bs-border-color) 30%, transparent 70%);
 }
 
 /* Table styling - strip matching */
