@@ -48,6 +48,9 @@ shinyApp(ui, server)
 | `scale_color_luwi_d()` | Discrete colors (categorical data) |
 | `scale_color_luwi_c()` | Sequential colors (continuous data) |
 | `scale_color_luwi_div()` | Diverging colors (hot/cold data) |
+| `scale_fill_luwi_d()` | Discrete fill colors (categorical data) |
+| `scale_fill_luwi_c()` | Sequential fill colors (continuous data) |
+| `scale_fill_luwi_div()` | Diverging fill colors (hot/cold data) |
 
 ## Complete Example
 ```r
