@@ -1,20 +1,29 @@
 Package: luwitemplate
-Title: luwi styling template for R shiny and quarto documents
+Title: Unified Brand Styling for Shiny and ggplot2
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: A complete styling package using _brand.yml to create an identifiable R Shiny and R Markdown docs
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Lukas", "Willocx", , "lukaswillocx@gmail.com", role = c("aut", "cre"))
+Description: Provides a complete styling system driven by a single '_brand.yml' 
+    file. Create consistent Bootstrap themes for Shiny applications, ggplot2 
+    visualizations, and interactive plotly charts with unified colors, fonts, 
+    and styling. All components automatically share your brand identity.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+RoxygenNote: 7.3.2
+LazyData: true
 Imports: 
-    bslib,
-    shiny,
-    ggplot2,
+    bslib (>= 0.6.0),
+    ggplot2 (>= 3.4.0),
+    grDevices,
+    plotly (>= 4.10.0),
+    shiny (>= 1.8.0),
+    yaml
+Suggests:
+    knitr,
+    rmarkdown,
     showtext,
-    sysfonts,
-    plotly
+    sysfonts
 URL: https://github.com/LukasWillocx/luwitemplate
 BugReports: https://github.com/LukasWillocx/luwitemplate/issues
+VignetteBuilder: knitr
