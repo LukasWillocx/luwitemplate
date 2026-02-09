@@ -1,6 +1,7 @@
 # Horizontal Navbar App Template
 
 library(luwitemplate)
+library(bslib)
 
 # UI
 ui <- bslib::page_navbar(
