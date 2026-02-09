@@ -2,7 +2,7 @@
 % Please edit documentation in R/theme_colors.R
 \name{get_theme_colors}
 \alias{get_theme_colors}
-\title{Extract colors from bslib theme}
+\title{Extract Colors from bslib Theme}
 \usage{
 get_theme_colors(theme = my_theme())
 }
@@ -10,8 +10,32 @@ get_theme_colors(theme = my_theme())
 \item{theme}{A bslib theme object (defaults to my_theme())}
 }
 \value{
-Named list of color values
+Named list of hex color values with underscore-separated names:
+\code{primary}, \code{secondary}, \code{success}, \code{danger}, \code{warning}, \code{info}, \code{light},
+\code{dark}, \code{body_bg}, \code{body_color}, \code{input_border_color}
 }
 \description{
-Extract colors from bslib theme
+Retrieves all theme color variables as an R-friendly named list. Useful for
+programmatically accessing your brand colors or building custom palettes.
 }
+\details{
+Color names are converted from CSS variable format (hyphenated) to R-friendly
+format (underscored). For example, "body-bg" becomes "body_bg".
+}
+\examples{
+# Get all theme colors
+colors <- get_theme_colors()
+colors$primary  # Your brand primary color
+
+# Use in custom visualizations
+plot(1:10, col = colors$primary, pch = 19)
+
+# Build a custom gradient
+my_gradient <- colorRampPalette(c(colors$light, colors$primary))
+
+}
+\seealso{
+\code{\link[=scale_color_luwi_discrete]{scale_color_luwi_discrete()}}, \code{\link[=scale_color_luwi_sequential]{scale_color_luwi_sequential()}},
+\code{\link[=scale_color_luwi_diverging]{scale_color_luwi_diverging()}} for ready-to-use palettes
+}
+\concept{color-utilities}

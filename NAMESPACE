@@ -3,8 +3,6 @@
 export(get_theme_colors)
 export(get_theme_fonts)
 export(luwi_ggplotly)
-export(my_page)
-export(my_simple_page)
 export(my_theme)
 export(scale_color_luwi_c)
 export(scale_color_luwi_d)

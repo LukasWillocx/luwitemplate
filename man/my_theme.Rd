@@ -2,13 +2,110 @@
 % Please edit documentation in R/theme.R
 \name{my_theme}
 \alias{my_theme}
-\title{Get the branded bslib theme}
+\title{Create Luwi Branded bslib Theme}
 \usage{
 my_theme()
 }
 \value{
-A bslib theme object
+A \code{bslib::bs_theme()} object ready to use in Shiny applications
 }
 \description{
-Get the branded bslib theme
+Generates a Bootstrap 5 theme from your _brand.yml file with optional custom
+CSS. This is the central theming function that powers all other styling in
+the package - use it in your Shiny UI to ensure consistent branding across
+your application.
 }
+\details{
+This function:
+\enumerate{
+\item Reads your package's \verb{_brand.yml} file (colors, fonts, spacing)
+\item Creates a Bootstrap 5 theme using \code{\link[bslib:bs_theme]{bslib::bs_theme()}}
+\item Applies custom CSS from \code{inst/css/custom.css} if available
+}
+
+The returned theme object is used as the default in other package functions
+like \code{\link[=theme_luwi]{theme_luwi()}}, \code{\link[=get_theme_colors]{get_theme_colors()}}, and \code{\link[=luwi_ggplotly]{luwi_ggplotly()}}, ensuring
+consistent styling across Shiny UI, static plots, and interactive visualizations.
+
+\strong{_brand.yml structure:}
+Your \verb{_brand.yml} should define colors, typography, and other brand elements.
+See the \href{https://rstudio.github.io/bslib/articles/brand.html}{bslib brand YAML documentation}
+for complete specification.
+}
+\section{Custom CSS}{
+
+Place additional CSS rules in \code{inst/css/custom.css} to override or extend
+Bootstrap defaults. This file is automatically included if present.
+}
+
+\examples{
+# Get the theme
+theme <- my_theme()
+
+# Use in Shiny app
+library(shiny)
+library(bslib)
+
+ui <- page_fluid(
+  theme = my_theme(),
+  h1("My Branded App"),
+  p("All Bootstrap components use your brand colors automatically")
+)
+
+\dontrun{
+# Complete Shiny app with plots
+library(ggplot2)
+library(plotly)
+
+ui <- page_fluid(
+  theme = my_theme(),
+
+  # Navbar uses brand colors automatically
+  navset_card_tab(
+    nav_panel("Static Plot",
+      plotOutput("static_plot")
+    ),
+    nav_panel("Interactive",
+      plotlyOutput("interactive_plot")
+    )
+  )
+)
+
+server <- function(input, output) {
+  output$static_plot <- renderPlot({
+    ggplot(mtcars, aes(mpg, wt, color = factor(cyl))) +
+      geom_point(size = 3) +
+      scale_color_luwi_d() +
+      theme_luwi()
+  })
+
+  output$interactive_plot <- renderPlotly({
+    p <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
+      geom_point()
+    luwi_ggplotly(p)
+  })
+}
+
+shinyApp(ui, server)
+}
+
+# Extract and use theme components
+theme <- my_theme()
+colors <- get_theme_colors(theme)
+fonts <- get_theme_fonts(theme)
+
+# Inspect the theme
+print(theme)
+
+# Customize further with bslib functions
+custom_theme <- my_theme() \%>\%
+  bslib::bs_add_variables("border-radius" = "0.5rem")
+
+}
+\seealso{
+\code{\link[bslib:bs_theme]{bslib::bs_theme()}} for the underlying theme constructor,
+\code{\link[=get_theme_colors]{get_theme_colors()}} to extract colors from the theme,
+\code{\link[=get_theme_fonts]{get_theme_fonts()}} to extract fonts from the theme,
+\code{\link[=theme_luwi]{theme_luwi()}} for ggplot2 theme using these colors/fonts
+}
+\concept{theme-generators}

@@ -2,15 +2,49 @@
 % Please edit documentation in R/theme_ggplot.R
 \name{scale_color_luwi_c}
 \alias{scale_color_luwi_c}
-\title{ggplot2 color scale for continuous data}
+\title{Continuous Color Scale (Luwi Brand)}
 \usage{
 scale_color_luwi_c(type = "warm", ...)
 }
 \arguments{
-\item{type}{Type of palette: "warm", "cool", or "green"}
+\item{type}{\code{"warm"} , \code{"cool"} or \code{"green"}. Default is \code{"warm"}}
 
-\item{...}{Additional arguments passed to scale_color_gradientn}
+\item{...}{Additional arguments passed to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_color_gradientn()}}
+(e.g., \code{limits}, \code{breaks}, \code{na.value})}
+}
+\value{
+A ggplot2 scale object
 }
 \description{
-ggplot2 color scale for continuous data
+Apply a sequential gradient color scale for continuous data with brand colors.
+Convenience wrapper around \code{scale_color_gradientn()}.
 }
+\examples{
+library(ggplot2)
+
+# Continuous color scale
+ggplot(faithfuld, aes(waiting, eruptions, color = density)) +
+  geom_point() +
+  scale_color_luwi_c(type = "warm") +
+  theme_luwi()
+
+# Cool palette with custom limits
+ggplot(diamonds, aes(carat, price, color = depth)) +
+  geom_point(alpha = 0.3) +
+  scale_color_luwi_c(type = "cool", limits = c(55, 70)) +
+  theme_luwi()
+
+}
+\seealso{
+\code{\link[=scale_fill_luwi_c]{scale_fill_luwi_c()}} for fill aesthetic,
+\code{\link[=scale_color_luwi_sequential]{scale_color_luwi_sequential()}} for the underlying palette,
+\code{\link[=scale_color_luwi_div]{scale_color_luwi_div()}} for diverging data
+
+Other ggplot-scales: 
+\code{\link{scale_color_luwi_d}()},
+\code{\link{scale_color_luwi_div}()},
+\code{\link{scale_fill_luwi_c}()},
+\code{\link{scale_fill_luwi_d}()},
+\code{\link{scale_fill_luwi_div}()}
+}
+\concept{ggplot-scales}
