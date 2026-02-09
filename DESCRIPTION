@@ -10,15 +10,15 @@ Description: Provides a complete styling system driven by a single '_brand.yml'
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 LazyData: true
 Imports: 
-    bslib (>= 0.6.0),
-    ggplot2 (>= 3.4.0),
-    grDevices,
-    plotly (>= 4.10.0),
-    shiny (>= 1.8.0),
-    yaml
+    bslib,
+    shiny,
+    ggplot2,
+    showtext,
+    sysfonts,
+    plotly
 Suggests:
     knitr,
     rmarkdown,
