@@ -24,7 +24,7 @@ server <- function(input, output) {
       geom_point(size = 3) +
       scale_color_luwi_d() +  # Brand colors
       theme_luwi()            # Brand theme
-  })
+  }, bg = 'transparent')
 }
 
 shinyApp(ui, server)
