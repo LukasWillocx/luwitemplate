@@ -133,54 +133,13 @@ textarea::placeholder {
   text-align: center;
 }
 
-/* ========================================
-   IMPROVED SIDEBAR ROUNDING SELECTORS
-   Multiple selectors for cross-platform compatibility
-   ======================================== */
-
-/* Target well containers in sidebar - multiple approaches */
-.bslib-sidebar-layout aside .well,
-.bslib-sidebar-layout > aside > div .well,
-.bslib-sidebar .well,
-aside .well,
-.well {
-  border-radius: 12px !important;
-  -webkit-border-radius: 12px !important;
-  -moz-border-radius: 12px !important;
-}
-
-/* Target col-sm-4 specifically within sidebar */
-.bslib-sidebar-layout aside .col-sm-4,
-.bslib-sidebar .col-sm-4,
-aside .col-sm-4 {
-  border-radius: 12px !important;
-  -webkit-border-radius: 12px !important;
-  -moz-border-radius: 12px !important;
-  max-width: none;
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
-}
-
-/* Original specific selector kept for Windows compatibility */
+/* Remove well container constraints on vertical sidebar navigation */
 .bslib-sidebar-layout > aside > div > div > div.col-sm-4.well {
   max-width: none;
   width: 100%;
   padding: 10px;
-  border-radius: 12px !important;
-  -webkit-border-radius: 12px !important;
-  -moz-border-radius: 12px !important;
+  border-radius: 12px!important;
   margin: 0 auto;
-}
-
-/* Target any direct child divs in the sidebar that might be containers */
-.bslib-sidebar-layout aside > div,
-.bslib-sidebar-layout aside > div > div,
-.bslib-sidebar > div,
-.bslib-sidebar > div > div {
-  border-radius: 12px !important;
-  -webkit-border-radius: 12px !important;
-  -moz-border-radius: 12px !important;
 }
 
 /* Make the nav-pills container span full width */
@@ -198,8 +157,6 @@ aside .col-sm-4 {
 /* Styled navigation pills for sidebar */
 .nav-pills .nav-link {
   border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
   margin-bottom: 10px;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -209,18 +166,7 @@ aside .col-sm-4 {
 /* Active pill styling - remove border */
 .nav-pills .nav-link.active {
   border-radius: 12px;
-  -webkit-border-radius: 12px;
-  -moz-border-radius: 12px;
   background-color: var(--bs-primary);
   color: var(--bs-light);
   font-weight: bold;
-}
-
-/* Additional catch-all for sidebar container rounding */
-.bslib-sidebar-layout aside,
-aside.bslib-sidebar {
-  border-radius: 12px !important;
-  -webkit-border-radius: 12px !important;
-  -moz-border-radius: 12px !important;
-  overflow: hidden; /* Ensures children respect parent's border-radius */
 }
