@@ -9,6 +9,7 @@ ui <- bslib::page_sidebar(
 
   # Vertical navigation sidebar
   sidebar = sidebar(
+    title = 'test',
     open = "always",
     navset_pill_list(
       id = "sidebar_nav",

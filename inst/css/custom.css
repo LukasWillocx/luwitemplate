@@ -133,12 +133,27 @@ textarea::placeholder {
   text-align: center;
 }
 
+/* ============================================
+   ENHANCED SIDEBAR BORDER-RADIUS RULES
+   ============================================ */
+
+/* Force border-radius on sidebar container */
+.bslib-sidebar-layout aside,
+.bslib-sidebar-layout .sidebar {
+  border-radius: 12px !important;
+  overflow: hidden; /* Ensures child elements respect parent radius */
+}
+
 /* Remove well container constraints on vertical sidebar navigation */
-.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well {
+/* Multiple selectors for maximum compatibility */
+.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well,
+aside .well,
+.sidebar .well,
+.bslib-sidebar .well {
   max-width: none;
   width: 100%;
   padding: 10px;
-  border-radius: 12px!important;
+  border-radius: 12px !important;
   margin: 0 auto;
 }
 
@@ -154,21 +169,31 @@ textarea::placeholder {
   margin: 0;
 }
 
-/* Styled navigation pills for sidebar */
-.nav-pills .nav-link {
-  border-radius: 12px;
+/* Styled navigation pills for sidebar - ENHANCED */
+/* Multiple selectors and !important to override Bootstrap defaults */
+.nav-pills .nav-link,
+.bslib-sidebar .nav-pills .nav-link,
+aside .nav-pills .nav-link {
+  border-radius: 12px !important;
   margin-bottom: 10px;
   padding: 12px 20px;
   box-sizing: border-box;
   width: 100%;
 }
 
-/* Active pill styling - remove border */
-.nav-pills .nav-link.active {
-  border-radius: 12px;
+/* Active pill styling - ENHANCED */
+/* Covers all possible states and contexts */
+.nav-pills .nav-link.active,
+.bslib-sidebar .nav-pills .nav-link.active,
+aside .nav-pills .nav-link.active,
+.nav-pills .nav-item .nav-link.active {
+  border-radius: 12px !important;
   background-color: var(--bs-primary);
   color: var(--bs-light);
   font-weight: bold;
 }
 
-
+/* Override any Bootstrap .well default border-radius */
+.well {
+  border-radius: 12px !important;
+}
