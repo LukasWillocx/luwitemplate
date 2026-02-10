@@ -35,7 +35,7 @@
 
 /* Firefox scrollbar styling */
 * {
-  scrollbar-color: var(--bs-primary) color-mix(in srgb, var(--bs-light) 85%, white 15%);;
+  scrollbar-color: var(--bs-primary) color-mix(in srgb, var(--bs-light) 85%, white 15%);
 }
 
 /* Base card styling */
@@ -59,20 +59,6 @@
   box-shadow:
     0 8px 10px color-mix(in srgb, var(--bs-primary) 70%, transparent 30%),
     inset 0 1px 0 color-mix(in srgb, white 25%, transparent 75%);
-}
-
-/* Card header - define hierarchy */
-.card-header {
-  background: color-mix(in srgb, var(--bs-body-bg) 40%, transparent 60%);
-  border-bottom: 1px solid color-mix(in srgb, var(--bs-border-color) 30%, transparent 70%);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Card footer - subtle differentiation */
-.card-footer {
-  background: color-mix(in srgb, var(--bs-body-bg) 50%, transparent 50%);
-  border-top: 1px solid color-mix(in srgb, var(--bs-border-color) 30%, transparent 70%);
 }
 
 /* Table styling - strip matching */
