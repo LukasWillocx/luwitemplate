@@ -4,7 +4,7 @@
 
 ## Installation
 ```r
-devtools::install_github("yourusername/luwitemplate")
+devtools::install_github("LukasWillocx/luwitemplate")
 ```
 
 ## Quick Start
