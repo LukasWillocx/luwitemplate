@@ -61,6 +61,27 @@
     inset 0 1px 0 color-mix(in srgb, white 25%, transparent 75%);
 }
 
+.card-header {
+  color: var(--bs-primary)!important;
+  font-weight: bold!important;
+}
+
+.card-footer {
+  font-style: italic!important;
+  color: #6c757d!important;
+  text-align: right!important;
+}
+
+.sidebar-title {
+  color: var(--bs-primary)!important;
+  font-weight: bold!important;
+}
+
+.navbar-brand {
+  color: var(--bs-primary)!important;
+  font-weight: bold!important;
+}
+
 /* Table styling - strip matching */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
   background-color: var(--bs-light);
@@ -137,7 +158,6 @@ textarea::placeholder {
   border-radius: 12px;
   margin-bottom: 10px;
   padding: 12px 20px;
-  border: 5px solid var(--bs-light);
   box-sizing: border-box;
   width: 100%;
 }
@@ -145,5 +165,9 @@ textarea::placeholder {
 /* Active pill styling - remove border */
 .nav-pills .nav-link.active {
   border-radius: 12px;
-  border: none;
+  background-color: var(--bs-primary);
+  color: var(--bs-light);
+  font-weight: bold;
 }
+
+
