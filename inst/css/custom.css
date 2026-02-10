@@ -180,3 +180,9 @@ aside.sidebar .sidebar-content .row .col-sm-4.well,
   color: var(--bs-light);
   font-weight: bold;
 }
+
+/* Force override at end of file */
+div.col-sm-4.well {
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
