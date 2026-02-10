@@ -133,19 +133,29 @@ textarea::placeholder {
   text-align: center;
 }
 
-/* Firefox-friendly sidebar styling */
-.sidebar .row {
+/* Firefox-specific comprehensive fix */
+.sidebar,
+.sidebar-content,
+.sidebar .row,
+.sidebar .col-sm-4.well {
   border-radius: 12px !important;
-  overflow: hidden;
+  overflow: hidden !important;
 }
 
+/* Force GPU acceleration for Firefox */
 .sidebar .col-sm-4.well {
   max-width: none;
   width: 100%;
   padding: 10px;
-  border-radius: 12px !important;
   margin: 0 auto;
-  overflow: hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  -moz-appearance: none;
+}
+
+/* Ensure child elements don't break out */
+.sidebar .col-sm-4.well * {
+  border-radius: inherit;
 }
 
 /* Make the nav-pills container span full width */
