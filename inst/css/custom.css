@@ -57,7 +57,7 @@
   border-color: color-mix(in srgb, var(--bs-border-color) 70%, transparent 30%);
   transform: translateY(-2px);
   box-shadow:
-    0 8px 10px color-mix(in srgb, var(--bs-primary) 30%, transparent 70%),
+    0 8px 10px color-mix(in srgb, var(--bs-primary) 70%, transparent 30%),
     inset 0 1px 0 color-mix(in srgb, white 25%, transparent 75%);
 }
 
