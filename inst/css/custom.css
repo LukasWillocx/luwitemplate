@@ -72,17 +72,14 @@
   text-align: right!important;
 }
 
-.navbar-brand {
+.sidebar-title {
   color: var(--bs-primary)!important;
   font-weight: bold!important;
 }
 
-/* Sidebar title styling - MERGED FROM TWO SEPARATE RULES */
-.sidebar-title {
+.navbar-brand {
   color: var(--bs-primary)!important;
   font-weight: bold!important;
-  background-color: var(--bs-light) !important;
-  text-align: center;
 }
 
 /* Table styling - strip matching */
@@ -130,6 +127,21 @@ textarea::placeholder {
   opacity: 0.6;
 }
 
+/* Sidebar header styling */
+.sidebar-title {
+  background-color: var(--bs-light) !important;
+  text-align: center;
+}
+
+/* Remove well container constraints on vertical sidebar navigation */
+.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well {
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px!important;
+  margin: 0 auto;
+}
+
 /* Make the nav-pills container span full width */
 .bslib-sidebar .nav-pills {
   width: 100%;
@@ -142,65 +154,19 @@ textarea::placeholder {
   margin: 0;
 }
 
-
-/* Force border-radius on sidebar container itself */
-.bslib-sidebar-layout aside,
-.bslib-sidebar-layout .sidebar {
-  border-radius: 12px !important;
-  overflow: hidden; /* Ensures child elements respect parent radius */
-}
-
-/* Target the .row container within the sidebar - THIS WAS THE MISSING PIECE */
-.bslib-sidebar-layout aside .row,
-.bslib-sidebar .row,
-aside .row {
-  border-radius: 12px !important;
-  overflow: hidden; /* Ensures child elements respect parent radius */
-}
-
-/* More specific targeting for nested row elements */
-.bslib-sidebar-layout > aside > div > div > .row {
-  border-radius: 12px !important;
-}
-
-/* Remove well container constraints on vertical sidebar navigation */
-/* Multiple selectors for maximum compatibility across bslib versions */
-.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well,
-aside .well,
-.sidebar .well,
-.bslib-sidebar .well {
-  max-width: none;
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px !important;
-  margin: 0 auto;
-}
-
-/* Styled navigation pills for sidebar - ENHANCED */
-/* Multiple selectors and !important to override Bootstrap defaults */
-.nav-pills .nav-link,
-.bslib-sidebar .nav-pills .nav-link,
-aside .nav-pills .nav-link {
-  border-radius: 12px !important;
+/* Styled navigation pills for sidebar */
+.nav-pills .nav-link {
+  border-radius: 12px;
   margin-bottom: 10px;
   padding: 12px 20px;
   box-sizing: border-box;
   width: 100%;
 }
 
-/* Active pill styling - ENHANCED */
-/* Covers all possible states and contexts */
-.nav-pills .nav-link.active,
-.bslib-sidebar .nav-pills .nav-link.active,
-aside .nav-pills .nav-link.active,
-.nav-pills .nav-item .nav-link.active {
-  border-radius: 12px !important;
+/* Active pill styling - remove border */
+.nav-pills .nav-link.active {
+  border-radius: 12px;
   background-color: var(--bs-primary);
   color: var(--bs-light);
   font-weight: bold;
-}
-
-/* Override any Bootstrap .well default border-radius - CATCH-ALL */
-.well {
-  border-radius: 12px !important;
 }
