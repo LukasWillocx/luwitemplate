@@ -42,7 +42,8 @@ ui <- bslib::page_sidebar(
         ),
         card(
           card_header("Card 4"),
-          card_body()
+          card_body(),
+          card_footer('footer')
         )
       )
     ),
