@@ -72,14 +72,17 @@
   text-align: right!important;
 }
 
-.sidebar-title {
+.navbar-brand {
   color: var(--bs-primary)!important;
   font-weight: bold!important;
 }
 
-.navbar-brand {
+/* Sidebar title styling - MERGED FROM TWO SEPARATE RULES */
+.sidebar-title {
   color: var(--bs-primary)!important;
   font-weight: bold!important;
+  background-color: var(--bs-light) !important;
+  text-align: center;
 }
 
 /* Table styling - strip matching */
@@ -127,36 +130,6 @@ textarea::placeholder {
   opacity: 0.6;
 }
 
-/* Sidebar header styling */
-.sidebar-title {
-  background-color: var(--bs-light) !important;
-  text-align: center;
-}
-
-/* ============================================
-   ENHANCED SIDEBAR BORDER-RADIUS RULES
-   ============================================ */
-
-/* Force border-radius on sidebar container */
-.bslib-sidebar-layout aside,
-.bslib-sidebar-layout .sidebar {
-  border-radius: 12px !important;
-  overflow: hidden; /* Ensures child elements respect parent radius */
-}
-
-/* Remove well container constraints on vertical sidebar navigation */
-/* Multiple selectors for maximum compatibility */
-.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well,
-aside .well,
-.sidebar .well,
-.bslib-sidebar .well {
-  max-width: none;
-  width: 100%;
-  padding: 10px;
-  border-radius: 12px !important;
-  margin: 0 auto;
-}
-
 /* Make the nav-pills container span full width */
 .bslib-sidebar .nav-pills {
   width: 100%;
@@ -167,6 +140,40 @@ aside .well,
   width: 100%;
   padding: 0;
   margin: 0;
+}
+
+
+/* Force border-radius on sidebar container itself */
+.bslib-sidebar-layout aside,
+.bslib-sidebar-layout .sidebar {
+  border-radius: 12px !important;
+  overflow: hidden; /* Ensures child elements respect parent radius */
+}
+
+/* Target the .row container within the sidebar - THIS WAS THE MISSING PIECE */
+.bslib-sidebar-layout aside .row,
+.bslib-sidebar .row,
+aside .row {
+  border-radius: 12px !important;
+  overflow: hidden; /* Ensures child elements respect parent radius */
+}
+
+/* More specific targeting for nested row elements */
+.bslib-sidebar-layout > aside > div > div > .row {
+  border-radius: 12px !important;
+}
+
+/* Remove well container constraints on vertical sidebar navigation */
+/* Multiple selectors for maximum compatibility across bslib versions */
+.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well,
+aside .well,
+.sidebar .well,
+.bslib-sidebar .well {
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px !important;
+  margin: 0 auto;
 }
 
 /* Styled navigation pills for sidebar - ENHANCED */
@@ -193,8 +200,7 @@ aside .nav-pills .nav-link.active,
   font-weight: bold;
 }
 
-/* Override any Bootstrap .well default border-radius */
+/* Override any Bootstrap .well default border-radius - CATCH-ALL */
 .well {
   border-radius: 12px !important;
 }
-
