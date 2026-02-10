@@ -133,23 +133,13 @@ textarea::placeholder {
   text-align: center;
 }
 
-/* Nuclear option - maximum specificity for Firefox */
-.bslib-sidebar-layout > aside.sidebar > div.sidebar-content > div.row,
-aside.sidebar .sidebar-content .row,
-.sidebar .row {
-  border-radius: 12px !important;
-  overflow: hidden !important;
-}
-
-.bslib-sidebar-layout > aside.sidebar > div.sidebar-content > div.row > div.col-sm-4.well,
-aside.sidebar .sidebar-content .row .col-sm-4.well,
-.sidebar .col-sm-4.well {
-  max-width: none !important;
-  width: 100% !important;
-  padding: 10px !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  margin: 0 auto !important;
+/* Remove well container constraints on vertical sidebar navigation */
+.bslib-sidebar-layout > aside > div > div > div.col-sm-4.well {
+  max-width: none;
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px!important;
+  margin: 0 auto;
 }
 
 /* Make the nav-pills container span full width */
@@ -179,16 +169,4 @@ aside.sidebar .sidebar-content .row .col-sm-4.well,
   background-color: var(--bs-primary);
   color: var(--bs-light);
   font-weight: bold;
-}
-
-/* Remove well container constraints - MAXIMUM SPECIFICITY */
-.bslib-sidebar-layout > aside > div > div > div.row > div.col-sm-4.well,
-.sidebar-content > div.row > div.col-sm-4.well,
-div.sidebar-content div.row div.col-sm-4.well {
-  max-width: none !important;
-  width: 100% !important;
-  padding: 10px !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  margin: 0 auto !important;
 }
