@@ -3,12 +3,6 @@
   transition: all 0.2s ease;
 }
 
-/* Subtle hover lift on cards */
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1), 0 2px 4px rgba(0,0,0,0.06);
-}
-
 /* Better focus indicators for accessibility */
 *:focus-visible {
   outline: 2px solid var(--bs-primary);
@@ -46,7 +40,7 @@
 
 /* Base card styling */
 .card {
-  background: color-mix(in srgb, var(--bs-body-bg) 60%, transparent 40%);
+  background: var(--bs-body-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid color-mix(in srgb, var(--bs-border-color) 50%, transparent 50%);
@@ -59,12 +53,11 @@
 
 /* Hover state - subtle lift */
 .card:hover {
-  background: color-mix(in srgb, var(--bs-body-bg) 70%, transparent 30%);
+  background: var(--bs-body-bg);
   border-color: color-mix(in srgb, var(--bs-border-color) 70%, transparent 30%);
   transform: translateY(-2px);
   box-shadow:
-    0 2px 6px color-mix(in srgb, var(--bs-body-color) 6%, transparent 94%),
-    0 12px 40px color-mix(in srgb, var(--bs-body-color) 12%, transparent 88%),
+    0 8px 10px color-mix(in srgb, var(--bs-primary) 30%, transparent 70%),
     inset 0 1px 0 color-mix(in srgb, white 25%, transparent 75%);
 }
 
@@ -84,13 +77,13 @@
 
 /* Table styling - strip matching */
 .table-striped > tbody > tr:nth-of-type(odd) > * {
-  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+  background-color: var(--bs-light);
 }
 .table-striped > tbody > tr:nth-of-type(even) > * {
-  background-color: color-mix(in srgb, var(--bs-light) 40%, white 60%) ;
+  background-color: color-mix(in srgb, var(--bs-light) 92%, var(--bs-primary) 8%) ;
 }
 .table-striped > thead > tr > * {
-  background-color: color-mix(in srgb, var(--bs-light) 85%, white 15%);
+  background-color: var(--bs-light);
 }
 
 /* Changing the 'to' box in the select input for dateranges*/
