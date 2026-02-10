@@ -140,6 +140,8 @@ textarea::placeholder {
   padding: 10px;
   border-radius: 12px!important;
   margin: 0 auto;
+  overflow: hidden; /* Firefox fix for border-radius clipping */
+  isolation: isolate; /* Force stacking context for Firefox */
 }
 
 /* Make the nav-pills container span full width */
