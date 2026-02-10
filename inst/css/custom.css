@@ -181,8 +181,14 @@ aside.sidebar .sidebar-content .row .col-sm-4.well,
   font-weight: bold;
 }
 
-/* Force override at end of file */
-div.col-sm-4.well {
+/* Remove well container constraints - MAXIMUM SPECIFICITY */
+.bslib-sidebar-layout > aside > div > div > div.row > div.col-sm-4.well,
+.sidebar-content > div.row > div.col-sm-4.well,
+div.sidebar-content div.row div.col-sm-4.well {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 10px !important;
   border-radius: 12px !important;
   overflow: hidden !important;
+  margin: 0 auto !important;
 }
