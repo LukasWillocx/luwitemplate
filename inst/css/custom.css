@@ -133,29 +133,23 @@ textarea::placeholder {
   text-align: center;
 }
 
-/* Firefox-specific comprehensive fix */
-.sidebar,
-.sidebar-content,
-.sidebar .row,
-.sidebar .col-sm-4.well {
+/* Nuclear option - maximum specificity for Firefox */
+.bslib-sidebar-layout > aside.sidebar > div.sidebar-content > div.row,
+aside.sidebar .sidebar-content .row,
+.sidebar .row {
   border-radius: 12px !important;
   overflow: hidden !important;
 }
 
-/* Force GPU acceleration for Firefox */
+.bslib-sidebar-layout > aside.sidebar > div.sidebar-content > div.row > div.col-sm-4.well,
+aside.sidebar .sidebar-content .row .col-sm-4.well,
 .sidebar .col-sm-4.well {
-  max-width: none;
-  width: 100%;
-  padding: 10px;
-  margin: 0 auto;
-  transform: translateZ(0);
-  will-change: transform;
-  -moz-appearance: none;
-}
-
-/* Ensure child elements don't break out */
-.sidebar .col-sm-4.well * {
-  border-radius: inherit;
+  max-width: none !important;
+  width: 100% !important;
+  padding: 10px !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin: 0 auto !important;
 }
 
 /* Make the nav-pills container span full width */
