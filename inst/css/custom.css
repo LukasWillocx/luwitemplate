@@ -171,6 +171,23 @@ textarea::placeholder {
   font-weight: bold;
 }
 
+/* Horizontal navbar active styling */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.nav-tabs .nav-link.active {
+  color: var(--bs-primary) !important;
+  border-bottom-color: var(--bs-primary) !important;
+  font-weight: bold;
+}
+
+.navbar-nav .nav-link.active:hover,
+.navbar-nav .nav-link.active:focus,
+.nav-tabs .nav-link.active:hover,
+.nav-tabs .nav-link.active:focus {
+  color: var(--bs-primary) !important;
+  border-bottom-color: var(--bs-primary) !important;
+}
+
 h1, h2, h3, h4, h5 {
     color: var(--bs-primary); /* Replace with your desired color */
 }
