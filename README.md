@@ -75,7 +75,7 @@ fonts <- get_theme_fonts()    # Named list: primary, secondary, all_families
 
 ## _brand.yml Structure
 
-Define your colors and fonts once:
+The colors and fonts are defined once in a file named `_brand.yml`.
 ```yaml
 meta:
   name: your-brand
