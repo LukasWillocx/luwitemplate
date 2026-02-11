@@ -13,23 +13,28 @@ ui <- bslib::page_navbar(
     "tab one",
     layout_columns(
       col_widths = c(8, 4, 4, 8),
-      row_heights = c("calc(50vh - 75px)", "calc(50vh - 75px)"),
+      row_heights = c('43vh' , '43vh'),
+      fill=F,
       card(
+        full_screen = T,
         card_header("Card 1"),
-        card_body(
-        )
+        card_body(),
+        card_footer('A footer with text')
       ),
       card(
+        full_screen = T,
         card_header("Card 2"),
         card_body(
         )
       ),
       card(
+        full_screen = T,
         card_header("Card 3"),
         card_body(
         )
       ),
       card(
+        full_screen = T,
         card_header("Card 4"),
         card_body(
         )
@@ -42,23 +47,28 @@ ui <- bslib::page_navbar(
     "tab two",
     layout_columns(
       col_widths = c(4, 8, 8, 4),
-      row_heights = c("calc(50vh - 75px)", "calc(50vh - 75px)"),
+      row_heights = c('43vh' , '43vh'),
+      fill=F,
       card(
+        full_screen = T,
         card_header("Card 5"),
         card_body(
         )
       ),
       card(
+        full_screen = T,
         card_header("Card 6"),
         card_body(
         )
       ),
       card(
+        full_screen = T,
         card_header("Card 7"),
         card_body(
         )
       ),
       card(
+        full_screen = T,
         card_header("Card 8"),
         card_body(
         )
