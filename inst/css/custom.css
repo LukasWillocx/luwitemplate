@@ -170,3 +170,13 @@ textarea::placeholder {
   color: var(--bs-light);
   font-weight: bold;
 }
+
+h1, h2, h3, h4, h5 {
+    color: var(--bs-primary); /* Replace with your desired color */
+}
+
+.sidebar hr {
+    margin: 8px ;
+}
+
+
