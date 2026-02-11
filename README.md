@@ -1,6 +1,6 @@
 # luwitemplate
 
-> Unified brand styling for Shiny, ggplot2, and plotly from a single `_brand.yml` file. Whilst currently 'Luwi' themed, with all colors and fonts being centralized in the _brand.yml file, this can easily be adapted to establish a distinct look for your R projects.
+> Unified brand styling for R Shiny applications and individual objects like ggplot, and plotly from a single `_brand.yml` file. Whilst currently 'Luwi' themed, with all colors and fonts being centralized in the _brand.yml file, this can easily be adapted to establish a distinct look for your R projects.
 
 ## Installation
 ```r
