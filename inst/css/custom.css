@@ -163,7 +163,7 @@ textarea::placeholder {
   width: 100%;
 }
 
-/* Active pill styling - remove border */
+/* Active pill styling */
 .nav-pills .nav-link.active {
   border-radius: 12px;
   background-color: var(--bs-primary);
@@ -178,5 +178,3 @@ h1, h2, h3, h4, h5 {
 .sidebar hr {
     margin: 8px ;
 }
-
-
