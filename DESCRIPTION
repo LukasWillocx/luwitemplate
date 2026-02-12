@@ -18,11 +18,11 @@ Imports:
     ggplot2,
     showtext,
     sysfonts,
-    plotly
+    plotly,
+    yaml
 Suggests:
     knitr,
     rmarkdown,
-    showtext,
     sysfonts
 URL: https://github.com/LukasWillocx/luwitemplate
 BugReports: https://github.com/LukasWillocx/luwitemplate/issues
