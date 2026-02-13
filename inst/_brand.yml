@@ -1,11 +1,5 @@
-logo:
-  images:
-    small: images/magic.png
-    medium: images/magic.png
-    large: images/magic.png
 meta:
-  name: Bioscience Data Portfolio
-  link: https://yourportfolio.com
+  name: luwitemplate brand
 color:
   primary: "#570a10"
   secondary: "#ad720a"
