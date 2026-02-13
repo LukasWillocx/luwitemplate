@@ -97,7 +97,7 @@ shinyApp(ui, server)
 | `dark_mode_css()` | Overrides bootstrap color declarations in dark mode |
 | `input_dark_mode(id = "dark_mode")` | Dark - light toggle button, animated |
 
-## Light Example
+## Serverless Light example
 ```r
 library(luwitemplate)
 library(ggplot2)
