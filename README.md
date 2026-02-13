@@ -13,7 +13,7 @@ devtools::install_github("LukasWillocx/luwitemplate")
 
 When opted to only use light-mode, all color-dark arguments in the `_brand.yml` 
 are ignored. Besides loading the custom theme through `library(luwitemplate)`, 
-the only argument that needs to be specified is `theme = my_theme()` for broad, 
+the only argument that needs to be specified is `theme = my_theme()` in the ui for broad, 
 app-wide styling. Helper functions for ggplot and ggplotly are listed below.
 ```r
 library(luwitemplate)
