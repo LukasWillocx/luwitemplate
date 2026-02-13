@@ -37,7 +37,7 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-### Light and darkmode 
+### Light and Dark mode 
 Dark mode relies on helper functions to override Shiny's bootstrap variables that are often
 *baked in*. In the ui section this requires `input_dark_mode(id = "dark_mode")` 
 & `dark_mode_css(),`, in the server section `dm <- use_dark_mode(input, session)`, which is
@@ -74,11 +74,11 @@ shinyApp(ui, server)
 ## What You Get
 
 **One `_brand.yml` file controls:**
-- Shiny UI components (buttons, cards, navbar)
-- ggplot2 themes (fonts, colors, backgrounds)
-- Plotly interactives (grids, tooltips, hover)
+- Shiny UI components (buttons, cards, navbar, embedded markdown, etc.)
+- ggplot2 themes (fonts, colors, backgrounds, grids)
+- Plotly interactives (grids, tooltips, hover, fonts, colors)
 - Color palettes (discrete, sequential, diverging)
-- Fully functional dark theme with helper functions
+- Dark theme toggle (color palette and helper functions)
 
 **Key functions:**
 
