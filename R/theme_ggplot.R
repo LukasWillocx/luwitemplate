@@ -145,6 +145,10 @@ luwi_ggplotly <- function(p, theme = my_theme(), base_size = 14, tooltip = "y") 
   colors <- get_theme_colors(theme)
   fonts <- get_theme_fonts()
 
+  # Apply theme_luwi to the ggplot BEFORE conversion — ggplotly inherits
+  # ggplot theme settings and they can override plotly layout() calls
+  p <- p + theme_luwi(theme = theme, base_size = base_size)
+
   # Convert primary color with alpha to rgba format for plotly
   primary_alpha <- grDevices::col2rgb(colors$primary, alpha = TRUE)
   grid_color <- sprintf("rgba(%s, %s, %s, 0.4)",
@@ -152,7 +156,7 @@ luwi_ggplotly <- function(p, theme = my_theme(), base_size = 14, tooltip = "y") 
                         primary_alpha[2],
                         primary_alpha[3])
 
-  ggplotly(p, tooltip = tooltip) %>%
+  plotly::ggplotly(p, tooltip = tooltip) %>%
     plotly::config(displayModeBar = FALSE) %>%
     plotly::layout(
       paper_bgcolor = "transparent",
