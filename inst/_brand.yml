@@ -17,6 +17,18 @@ color:
   dark: &dark-color "#1a1c1a"
   foreground: *dark-color
   background: *light-color
+# Dark mode overrides — same hue families, lifted for contrast on dark surfaces
+color-dark:
+  primary: "#cf8536"
+  secondary: "#30d9a0"
+  success: "#6aad3a"
+  danger: "#e8737b"
+  warning: "#e0c050"
+  info: "#7cb8d8"
+  light: "#1c1e26"
+  dark: "#d6e8e0"
+  foreground: "#d6e8e0"
+  background: "#1c1e26"
 # Direct Bootstrap Sass variable mappings
 theme:
   # Body
