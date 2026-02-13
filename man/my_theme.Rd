@@ -4,7 +4,12 @@
 \alias{my_theme}
 \title{Create Luwi Branded bslib Theme}
 \usage{
-my_theme()
+my_theme(mode = c("light", "dark"))
+}
+\arguments{
+\item{mode}{Character. Either \code{"light"} (default) or \code{"dark"}.
+Controls which color palette is used from the \code{color} and
+\code{color-dark} sections of \code{_brand.yml}.}
 }
 \value{
 A \code{bslib::bs_theme()} object ready to use in Shiny applications
@@ -18,29 +23,33 @@ your application.
 \details{
 This function:
 \enumerate{
-\item Reads your package's \verb{_brand.yml} file (colors, fonts, spacing)
-\item Creates a Bootstrap 5 theme using \code{\link[bslib:bs_theme]{bslib::bs_theme()}}
+\item Reads your package's \code{_brand.yml} file (colors, fonts, spacing)
+\item Creates a Bootstrap 5 theme using \code{\link[bslib]{bs_theme}}
+\item If \code{mode = "dark"}, overrides color variables with the
+\code{color-dark} palette from the same YAML
 \item Applies custom CSS from \code{inst/css/custom.css} if available
 }
 
 The returned theme object is used as the default in other package functions
-like \code{\link[=theme_luwi]{theme_luwi()}}, \code{\link[=get_theme_colors]{get_theme_colors()}}, and \code{\link[=luwi_ggplotly]{luwi_ggplotly()}}, ensuring
-consistent styling across Shiny UI, static plots, and interactive visualizations.
-
-\strong{_brand.yml structure:}
-Your \verb{_brand.yml} should define colors, typography, and other brand elements.
-See the \href{https://rstudio.github.io/bslib/articles/brand.html}{bslib brand YAML documentation}
-for complete specification.
+like \code{\link{theme_luwi}}, \code{\link{get_theme_colors}}, and
+\code{\link{luwi_ggplotly}}, ensuring consistent styling across Shiny UI,
+static plots, and interactive visualizations.
 }
-\section{Custom CSS}{
+\section{Dark Mode}{
 
-Place additional CSS rules in \code{inst/css/custom.css} to override or extend
-Bootstrap defaults. This file is automatically included if present.
+Dark mode uses the \code{color-dark} section of \code{_brand.yml} to
+override Bootstrap Sass variables. This ensures the full cascade of
+derived variables (RGB decompositions, emphasis colors, subtle backgrounds)
+is recomputed by the Sass compiler. Use \code{\link{use_dark_mode}} in
+your Shiny server to enable reactive toggling.
 }
 
 \examples{
-# Get the theme
+# Light theme (default)
 theme <- my_theme()
+
+# Dark theme
+dark_theme <- my_theme("dark")
 
 # Use in Shiny app
 library(shiny)
@@ -53,59 +62,35 @@ ui <- page_fluid(
 )
 
 \dontrun{
-# Complete Shiny app with plots
-library(ggplot2)
-library(plotly)
-
+# App with dark mode toggle
 ui <- page_fluid(
   theme = my_theme(),
-
-  # Navbar uses brand colors automatically
-  navset_card_tab(
-    nav_panel("Static Plot",
-      plotOutput("static_plot")
-    ),
-    nav_panel("Interactive",
-      plotlyOutput("interactive_plot")
-    )
-  )
+  input_dark_mode(id = "dark_mode"),
+  plotOutput("my_plot")
 )
 
-server <- function(input, output) {
-  output$static_plot <- renderPlot({
-    ggplot(mtcars, aes(mpg, wt, color = factor(cyl))) +
-      geom_point(size = 3) +
-      scale_color_luwi_d() +
-      theme_luwi()
-  })
+server <- function(input, output, session) {
+  dm <- use_dark_mode(input, session)
 
-  output$interactive_plot <- renderPlotly({
-    p <- ggplot(iris, aes(Sepal.Length, Sepal.Width, color = Species)) +
-      geom_point()
-    luwi_ggplotly(p)
+  output$my_plot <- renderPlot({
+    ggplot(mtcars, aes(mpg, wt)) +
+      geom_point() +
+      theme_luwi(theme = dm$theme())
   })
 }
 
 shinyApp(ui, server)
 }
 
-# Extract and use theme components
-theme <- my_theme()
-colors <- get_theme_colors(theme)
-fonts <- get_theme_fonts(theme)
-
-# Inspect the theme
-print(theme)
-
-# Customize further with bslib functions
-custom_theme <- my_theme() \%>\%
-  bslib::bs_add_variables("border-radius" = "0.5rem")
-
 }
 \seealso{
-\code{\link[bslib:bs_theme]{bslib::bs_theme()}} for the underlying theme constructor,
-\code{\link[=get_theme_colors]{get_theme_colors()}} to extract colors from the theme,
-\code{\link[=get_theme_fonts]{get_theme_fonts()}} to extract fonts from the theme,
-\code{\link[=theme_luwi]{theme_luwi()}} for ggplot2 theme using these colors/fonts
+\code{\link[bslib]{bs_theme}} for the underlying theme constructor,
+\code{\link{get_theme_colors}} to extract colors from the theme,
+\code{\link{get_theme_fonts}} to extract fonts from the theme,
+\code{\link{theme_luwi}} for ggplot2 theme using these colors/fonts,
+\code{\link{use_dark_mode}} for Shiny dark mode integration
+
+Other theme-generators: 
+\code{\link{use_dark_mode}()}
 }
 \concept{theme-generators}
