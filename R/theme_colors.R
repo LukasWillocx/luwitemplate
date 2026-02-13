@@ -31,23 +31,39 @@
 #' @export
 get_theme_colors <- function(theme = my_theme()) {
 
-  # Explicitly list all color variable names from your YAML
+  mode <- attr(theme, "luwi_mode") %||% "light"
+
+  if (mode == "dark") {
+    # Read dark colors directly from YAML — bs_get_variables doesn't reliably
+    # resolve overrides set via bs_add_variables
+    brand_file <- system.file("_brand.yml", package = "luwitemplate")
+    brand_config <- yaml::read_yaml(brand_file)
+    dk <- brand_config[["color-dark"]]
+
+    return(list(
+      primary            = dk$primary,
+      secondary          = dk$secondary,
+      success            = dk$success,
+      danger             = dk$danger,
+      warning            = dk$warning,
+      info               = dk$info,
+      light              = dk$light,
+      dark               = dk$dark,
+      body_bg            = dk$background,
+      body_color         = dk$foreground,
+      input_border_color = dk$foreground
+    ))
+  }
+
+  # Light mode — original bs_get_variables path
   color_vars <- c(
-    # Bootstrap semantic colors
     "primary", "secondary", "success", "danger", "warning", "info", "light", "dark",
-    # Layout colors
     "body-bg", "body-color",
-    # Input/border colors
     "input-border-color"
   )
 
-  # Extract all at once
   colors <- bslib::bs_get_variables(theme, color_vars)
-
-  # Convert hyphens to underscores for R-friendly names
   names(colors) <- gsub("-", "_", names(colors))
-
-  # Return as list
   as.list(colors)
 }
 ###############################################################################
