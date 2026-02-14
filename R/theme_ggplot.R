@@ -239,9 +239,9 @@ luwi_ggplotly <- function(p, theme = my_theme(), base_size = 14, tooltip = "y") 
 #'   theme_luwi()
 #'
 #' @export
-scale_color_luwi_c <- function(type = "warm", ...) {
+scale_color_luwi_c <- function(type = "warm", theme = my_theme(), ...) {
   ggplot2::scale_color_gradientn(
-    colors = scale_color_luwi_sequential(type = type),
+    colors = scale_color_luwi_sequential(theme = theme, type = type),
     ...
   )
 }
@@ -280,9 +280,9 @@ scale_color_luwi_c <- function(type = "warm", ...) {
 #'   theme_luwi()
 #'
 #' @export
-scale_fill_luwi_c <- function(type = "warm", ...) {
+scale_fill_luwi_c <- function(type = "warm", theme = my_theme(), ...) {
   ggplot2::scale_fill_gradientn(
-    colors = scale_color_luwi_sequential(type = type),
+    colors = scale_color_luwi_sequential(theme = theme, type = type),
     ...
   )
 }
@@ -331,9 +331,9 @@ scale_fill_luwi_c <- function(type = "warm", ...) {
 #'   theme_luwi()
 #'
 #' @export
-scale_color_luwi_div <- function(...) {
+scale_color_luwi_div <- function(theme = my_theme(), ...) {
   ggplot2::scale_color_gradientn(
-    colors = scale_color_luwi_diverging(),
+    colors = scale_color_luwi_diverging(theme = theme),
     ...
   )
 }
@@ -369,9 +369,9 @@ scale_color_luwi_div <- function(...) {
 #'   theme_luwi()
 #'
 #' @export
-scale_fill_luwi_div <- function(...) {
+scale_fill_luwi_div <- function(theme = my_theme(), ...) {
   ggplot2::scale_fill_gradientn(
-    colors = scale_color_luwi_diverging(),
+    colors = scale_color_luwi_diverging(theme = theme),
     ...
   )
 }
@@ -413,9 +413,9 @@ scale_fill_luwi_div <- function(...) {
 #'   theme_luwi()
 #'
 #' @export
-scale_color_luwi_d <- function(...) {
+scale_color_luwi_d <- function(theme = my_theme(), ...) {
   ggplot2::scale_color_manual(
-    values = scale_color_luwi_discrete(),
+    values = scale_color_luwi_discrete(theme = theme),
     ...
   )
 }
@@ -457,9 +457,9 @@ scale_color_luwi_d <- function(...) {
 #'   theme(legend.position = "none")  # Class already on x-axis
 #'
 #' @export
-scale_fill_luwi_d <- function(...) {
+scale_fill_luwi_d <- function(theme = my_theme(), ...) {
   ggplot2::scale_fill_manual(
-    values = scale_color_luwi_discrete(),
+    values = scale_color_luwi_discrete(theme = theme),
     ...
   )
 }
