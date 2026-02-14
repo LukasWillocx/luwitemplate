@@ -1,6 +1,6 @@
 # luwitemplate
 
-> Unified brand styling for R Shiny applications and individual objects like ggplot, and plotly from a single `_brand.yml` file. Whilst currently 'Luwi' themed, with all colors and fonts being centralized in the _brand.yml file, this can easily be adapted to establish a distinct look for your R projects.
+> Unified brand styling for R Shiny applications and individual objects like ggplot, and plotly from a single `_brand.yml` file. Whilst currently 'Luwi' themed, with all colors and fonts being centralized in the _brand.yml file, this can easily be adapted to establish a distinct look for your R shiny projects.
 
 ## Installation
 ```r
@@ -13,7 +13,7 @@ devtools::install_github("LukasWillocx/luwitemplate")
 
 When opted to only use light-mode, all color-dark arguments in the `_brand.yml` 
 are ignored. Besides loading the custom theme through `library(luwitemplate)`, 
-the only argument that needs to be specified is `theme = my_theme()` for broad, 
+the only argument that needs to be specified is `theme = my_theme()` in the ui for broad, 
 app-wide styling. Helper functions for ggplot and ggplotly are listed below.
 ```r
 library(luwitemplate)
@@ -37,7 +37,7 @@ server <- function(input, output) {
 shinyApp(ui, server)
 ```
 
-### Light and darkmode 
+### Light and Dark mode 
 Dark mode relies on helper functions to override Shiny's bootstrap variables that are often
 *baked in*. In the ui section this requires `input_dark_mode(id = "dark_mode")` 
 & `dark_mode_css(),`, in the server section `dm <- use_dark_mode(input, session)`, which is
@@ -74,11 +74,11 @@ shinyApp(ui, server)
 ## What You Get
 
 **One `_brand.yml` file controls:**
-- Shiny UI components (buttons, cards, navbar)
-- ggplot2 themes (fonts, colors, backgrounds)
-- Plotly interactives (grids, tooltips, hover)
+- Shiny UI components (buttons, cards, navbar, embedded markdown, etc.)
+- ggplot2 themes (fonts, colors, backgrounds, grids)
+- Plotly interactives (grids, tooltips, hover, fonts, colors)
 - Color palettes (discrete, sequential, diverging)
-- Fully functional dark theme with helper functions
+- Dark theme toggle (color palette and helper functions)
 
 **Key functions:**
 
@@ -97,7 +97,7 @@ shinyApp(ui, server)
 | `dark_mode_css()` | Overrides bootstrap color declarations in dark mode |
 | `input_dark_mode(id = "dark_mode")` | Dark - light toggle button, animated |
 
-## Light Example
+## Serverless Light example
 ```r
 library(luwitemplate)
 library(ggplot2)
