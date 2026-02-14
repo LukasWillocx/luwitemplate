@@ -4,7 +4,7 @@
 \alias{scale_fill_luwi_d}
 \title{Discrete Fill Scale (Luwi Brand)}
 \usage{
-scale_fill_luwi_d(...)
+scale_fill_luwi_d(theme = my_theme(), ...)
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{\link[ggplot2:scale_manual]{ggplot2::scale_fill_manual()}}

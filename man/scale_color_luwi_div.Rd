@@ -4,7 +4,7 @@
 \alias{scale_color_luwi_div}
 \title{Diverging Color Scale (Luwi Brand)}
 \usage{
-scale_color_luwi_div(...)
+scale_color_luwi_div(theme = my_theme(), ...)
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_color_gradientn()}}

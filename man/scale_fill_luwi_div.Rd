@@ -4,7 +4,7 @@
 \alias{scale_fill_luwi_div}
 \title{Diverging Fill Scale (Luwi Brand)}
 \usage{
-scale_fill_luwi_div(...)
+scale_fill_luwi_div(theme = my_theme(), ...)
 }
 \arguments{
 \item{...}{Additional arguments passed to \code{\link[ggplot2:scale_gradient]{ggplot2::scale_fill_gradientn()}}

@@ -4,7 +4,7 @@
 \alias{scale_fill_luwi_c}
 \title{Continuous Fill Scale (Luwi Brand)}
 \usage{
-scale_fill_luwi_c(type = "warm", ...)
+scale_fill_luwi_c(type = "warm", theme = my_theme(), ...)
 }
 \arguments{
 \item{type}{Palette type: \code{"warm"} (coral to red), \code{"cool"} (teal to blue),

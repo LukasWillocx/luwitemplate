@@ -4,7 +4,7 @@
 \alias{scale_color_luwi_c}
 \title{Continuous Color Scale (Luwi Brand)}
 \usage{
-scale_color_luwi_c(type = "warm", ...)
+scale_color_luwi_c(type = "warm", theme = my_theme(), ...)
 }
 \arguments{
 \item{type}{\code{"warm"} , \code{"cool"} or \code{"green"}. Default is \code{"warm"}}
