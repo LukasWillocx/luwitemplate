@@ -173,9 +173,3 @@ typography:
     weight: 700
     line-height: 1.1
 ```
-
-See [bslib brand documentation](https://rstudio.github.io/bslib/articles/brand.html) for full spec.
-
-## License
-
-MIT
