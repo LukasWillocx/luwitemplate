@@ -135,7 +135,6 @@ color:
   dark: &dark-color "#1a1c1a"
   foreground: *dark-color
   background: *light-color
-# Dark mode overrides — same hue families, lifted for contrast on dark surfaces
 color-dark:
   primary: "#cf8536"
   secondary: "#30d9a0"
@@ -147,7 +146,6 @@ color-dark:
   dark: "#d6e8e0"
   foreground: "#d6e8e0"
   background: "#1c1e26"
-# Direct Bootstrap Sass variable mappings
 theme:
   # Body
   body-bg: *light-color
@@ -156,7 +154,6 @@ theme:
   border-radius: "0.75rem"
   border-radius-sm: "0.5rem"
   border-radius-lg: "1rem"
-# text styling
 typography:
   fonts:
     - family: &base-font Manrope
