@@ -7,7 +7,7 @@ name: Build and deploy wasm R package repository
 
 jobs:
   deploy-cran-repo:
-    uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v1
+    uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v2
     permissions:
       repository-projects: read
       pages: write
