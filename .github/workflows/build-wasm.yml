@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: [main]
+
+name: Build WASM
+
+jobs:
+  build:
+    uses: r-wasm/actions/.github/workflows/build-and-deploy.yml@v1
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
