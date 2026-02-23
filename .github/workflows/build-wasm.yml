@@ -1,14 +1,14 @@
 on:
   push:
-    branches: [main]
+    branches: [main, master]
   workflow_dispatch:
 
-name: Build WASM
+name: Build and deploy wasm R package repository
 
 jobs:
-  build:
-    uses: r-wasm/actions/.github/workflows/build-and-deploy.yml@v1
+  deploy-cran-repo:
+    uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v1
     permissions:
-      contents: read
+      repository-projects: read
       pages: write
       id-token: write
