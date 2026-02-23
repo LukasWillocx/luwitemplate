@@ -36,11 +36,17 @@ theme:
 typography:
   fonts:
     - family: &base-font Manrope
-      source:
-        path: fonts/Manrope-Regular.ttf
+      source: file
+      files:
+        - path: fonts/Manrope-Regular.ttf
+          weight: 400
+          style: normal
     - family: &header-font Montserrat
-      source:
-        path: fonts/Montserrat-Bold.ttf
+      source: file
+      files:
+        - path: fonts/Montserrat-Bold.ttf
+          weight: 700
+          style: normal
   base:
     family: *base-font
     size: 1rem
