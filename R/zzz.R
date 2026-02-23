@@ -20,6 +20,7 @@
     )
     sysfonts::font_add(
       family = "Montserrat",
+      regular = file.path(fonts_dir, "Montserrat-Regular.ttf"),
       bold = file.path(fonts_dir, "Montserrat-Bold.ttf")
     )
     showtext::showtext_auto()
