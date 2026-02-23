@@ -12,12 +12,16 @@
 #' @return NULL (invisibly). Called for side effects (font registration).
 
 .onLoad <- function(libname, pkgname) {
-  # Load fonts when package loads
   if (requireNamespace("showtext", quietly = TRUE)) {
-    fonts <- get_theme_fonts()
-    for (font_family in fonts$all_families) {
-      sysfonts::font_add_google(font_family, font_family)
-    }
+    fonts_dir <- system.file("fonts", package = pkgname)
+    sysfonts::font_add(
+      family = "Manrope",
+      regular = file.path(fonts_dir, "Manrope-Regular.ttf")
+    )
+    sysfonts::font_add(
+      family = "Montserrat",
+      bold = file.path(fonts_dir, "Montserrat-Bold.ttf")
+    )
     showtext::showtext_auto()
   }
 }
