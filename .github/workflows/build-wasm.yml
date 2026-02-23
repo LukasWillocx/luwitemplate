@@ -9,7 +9,7 @@ jobs:
   deploy-cran-repo:
     uses: r-wasm/actions/.github/workflows/deploy-cran-repo.yml@v2
     with:
-      webr-image: "ghcr.io/r-wasm/webr:r4.4"
+      webr-image: "ghcr.io/r-wasm/webr:v0.4.0"
     permissions:
       repository-projects: read
       pages: write
